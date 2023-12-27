@@ -1,0 +1,107 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="glass-morphism-container1" name="form1" id="form1">
+  <div class="d-flex justify-content-center" >
+    <div class="spinner-border"  role="status" >
+      <span class="sr-only">..</span>
+    </div>
+  </div>
+  <h1 class="form-heading">{{heading_payment}}</h1>
+  {% csrf_token %}
+
+  <input
+    type="hidden"
+    name="_token"
+    value="b1nCcqafDVGwwKwH5DLWqeD06kDWSQBXGrPwAco3"
+  />
+  <div class="row">
+    <div class="col-lg-12 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+       
+        <label class="text-left"
+          >{{payment_amount_label}}<span class="mandatory"></span
+        ></label>
+        <input
+          class="form-control"
+          type="text"
+          name="payment_amount"
+          id="payment_amount"
+          readonly
+          required
+        />
+      </div>
+    </div>
+
+    <div class="text-center col-lg-12 col-md-12 col-sm-12 mt-3">
+      <div class="form-group mb-0">
+        <a id="linkofpayment"><button>Pay</button></a>
+  
+
+           
+   
+
+        <script>
+
+
+
+    // window.location.href = "{% url 'successpayment' %}";
+    // window.location.href = "{% url 'paymentfail' %}";
+    
+
+
+          var AMOUNTDATA = "";
+          var phonepe_order_id=sessionStorage.getItem("unique_transaction_id")
+          console.log(phonepe_order_id)
+          window.onload = function () {
+           
+            localStorage.setItem("phonepe_order_id",phonepe_order_id)
+            var Course=sessionStorage.getItem("ikfcourse")
+            AMOUNTDATA=sessionStorage.getItem("DISCOUNTEDAMOUNT")
+            document.getElementById("payment_amount").value = sessionStorage.getItem("DISCOUNTEDAMOUNT")
+
+            $.ajax({
+                type: "POST",
+                url: "{% url 'updatepaykey' %}",
+                data: {
+                  razorpay_unique_id:phonepe_order_id,
+                  ikfuniqueid:localStorage.getItem('ikfuniqueid'),
+                  status: "initiated",
+                  csrfmiddlewaretoken: "{{ csrf_token }}",
+                },
+
+                success: function (result) {
+                  if (result) {
+                    
+                    var anchorElement = document.getElementById("linkofpayment");
+
+                      // Check if the element exists
+                      if (anchorElement) {
+                          // Set the href attribute dynamically
+                          anchorElement.href = sessionStorage.getItem('pay_page_url');
+                      }
+                      $('.spinner-border').hide();
+                    
+                  console.log(result)
+                    
+            
+
+                    
+                  }
+                },
+                error: function (error) {
+                  
+                  alert("Integrity Error");
+                  
+                },
+              }); 
+            
+            
+
+          };
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+<script></script>
+{% endblock %}

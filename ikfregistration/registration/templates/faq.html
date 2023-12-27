@@ -1,0 +1,427 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- 
+	Template Name: SportsZone: Sports Club, New & Game Magazine Mobile Responsive Bootstrap Html Template 
+	Version: 1.0
+	Author: DexignZone
+	Website: http://www.dexignzone.com/
+	Contact: dexignexpert@gmail.com
+	Follow: www.twitter.com/dexignzones
+	Like: www.facebook.com/dexignzone
+	
+-->
+<!--[if IE 7 ]>  <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]>  <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]>  <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
+<!-- Meta -->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="description" content="{{ ikf_shared_link_desc }}." />
+    <meta property="og:title" content="{{ ikf_shared_link_title }}" />
+    <meta property="og:description" content="{{ ikf_shared_link_desc }}." />
+    <!-- <meta property="og:image" content="http://sportszone.dexignlab.com/xhtml/social-image.png' %}" /> -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicons Icon -->
+    <link rel="icon" href="{% static 'theme/images/ikflogo3.png' %}" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'theme/images/ikflogo3.png' %}" />
+
+    <!-- Page Title Here -->
+    <title>India Khelo Football</title>
+
+    <!-- Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lt IE 9]>
+            <script src="{% static 'js/html5shiv.min.js' %}"></script>
+            <script src="{% static 'js/respond.min.js' %}"></script>
+        <![endif]-->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="{% static 'theme/css/plugins.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'theme/css/style.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'theme/css/hover.css' %}">
+    <link rel="stylesheet" type="text/css" class="skin" href="{% static 'theme/css/skin/skin-1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'theme/css/templete.min.css' %}">
+
+    <!-- Revolution Slider Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'theme/plugins/revolution/revolution/css/settings.css' %}">
+    <!-- Revolution Navigation Style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'theme/plugins/revolution/revolution/css/navigation.css' %}">
+
+</head>
+<!-- header END -->
+<!-- Content -->
+<div class="page-content bg-white">
+    <!-- inner page banner -->
+    <div class="dez-bnr-inr overlay-black-middle"
+        style="background-image:url('../media/{{ workshopsRegimages.WorkShopsRegBanner }}');">
+        <div class="container">
+            <div class="dez-bnr-inr-entry">
+                <h1 class="text-white" style="padding-top:30px ;">FAQ</h1>
+            </div>
+        </div>
+    </div>
+    <!-- inner page banner END -->
+    <!-- Breadcrumb row -->
+    <div class="breadcrumb-row">
+        <div class="container">
+            <ul class="list-inline">
+                <li><a href="{% url 'homeindex'  %}">Home</a></li>
+                <li>FAQ</li>
+                
+                
+                
+
+            </ul>
+            
+
+            
+        </div>
+
+    </div>
+    <!-- Breadcrumb row END -->
+    <!-- contact area -->
+
+         
+                                <div class="container woo-entry mt-5">
+                                  <div class=" m-b30">
+                                      <div class="row blog-post blog-md date-style-2">
+                                          <div class="col-lg-4 col-md-4  col-sm-5 m-b30"> <a href="#"><img
+                                                      src="../media/{{ workshopsRegimages.FaqIMG }}" alt=""></a> </div>
+                                          <div class="col-lg-8 col-md-8 col-sm-7">
+                                              <div class="dez-post-title ">
+                                                  <h2 class="post-title"><a href="#">{{ Faq_heading  |safe}}</a></h2>
+                                              </div>
+                                              <div class="dez-post-text">
+                                                  <p class="m-b10">{{ Faq_text  |safe }}</p>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+
+<!--                         
+                        <div class="Section-full">
+                            <div class="Section-full">
+                              <div class="section-head text-center ">
+                                <h2 class="h2">{{ Previous_Workshop }} </h2>
+                                <div class="dez-separator-outer ">
+                                  <div class="dez-separator bg-primary style-liner"></div>
+                                </div>
+                              </div>
+                              <div class="section-content text-center">
+                                <div
+                                  class="owl-carousel img-carousel-content owl-dots-none owl-btn-1 primary lightgallery owl-btn-center-lr"
+                                >
+                                  {% for Previous in previous_workshop %}
+                                  <div class="item">
+                                    <div class="dez-box dez-gallery-box">
+                                      <div class="dez-thum dez-img-overlay1 dez-img-effect zoom-slow">
+                                        <a href="javascript:void(0);">
+                                          <img src="{{ Previous.pic}}" alt="" />
+                                        </a>
+                                        <div class="overlay-bx">
+                                          <div class="overlay-icon">
+                                            <span
+                                              data-exthumbimage="{{ Previous.pic}}"
+                                              data-src="{{ Previous.pic}}"
+                                              class="icon-bx-xs check-km"
+                                              title="Light Gallery Carousel 1"
+                                            >
+                                              <i class="fa fa-picture-o"></i>
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {%endfor%}
+                                </div>
+                          </div>
+                         -->
+                                                    <!-- Testimonials --->
+              
+                          <!-- <div class="section-full bg-white bg-img-fix content-inner-1">
+                            <div class="container">
+                                <div class="section-head text-center">
+                                    <h2 class="text-uppercase">{{ Testimonials_Workshop }}</h2>
+                                    <div class="dez-separator bg-primary"></div>
+                                </div>
+                                <div class="section-content">
+                                    <div class="owl-carousel owl-theme testimonial-four">
+                                        {% for testimonial in testimonials %}
+                                        <div class="item">
+                                            <div class="testimonial-4 ">
+                                                <div class="testimonial-pic"><img src="{{testimonial.pic}}" width="100"
+                                                        height="100" alt=""></div>
+                                                <div class="testimonial-text text-white">
+                                                    <p>{{testimonial.description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {%endfor%}
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                            <!--- Testimonials END --->
+       <!-- Winners  -->
+       <!-- <div class="section-full bg-white content-inner">
+        <div class="container">
+          <div class="section-head text-center">
+            <h2 class="h2">{{ winners_home }}</h2>
+            <div class="dez-separator-outer">
+              <div class="dez-separator bg-primary style-liner"></div>
+            </div>
+            <p>{{ winners_paragraph }}</p>
+          </div>
+          <div class="section-content text-center">
+            <div
+              class="owl-carousel owl-theme img-carousel-content mfp-gallery gallery owl-btn-center-lr"
+            >
+              {% for winner in winners %}
+             
+              <div class="item">
+                <div class="dez-box m-b30 dez-img-effect vertical-pan dez-staff">
+                  <div class="dez-media vertical-pan dez-img-effect">
+                    <a href="#">
+                      <img src="../media/{{winner.pic}}" alt="" width="358" height="460" />
+                    </a>
+                  </div>
+                  <div class="p-a15 bg-primary text-white dez-team">
+                    <h4 class="dez-title text-capitalize m-t0">
+                      tt
+                      {{ winner.name|safe }}
+                    </h4>
+                    <div class="dez-separator-outer">
+                      <div class="dez-separator bg-white style-liner"></div>
+                    </div>
+                    <span class="dez-member-position"
+                      >{{winner.category_id}}</span
+                    >
+                   
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- Winners END -->
+    <!-- Clubs -->
+    <!-- <div class="p-b30">
+        <div class="section-head text-center" style="padding-bottom: 20px">
+          <h2 class="h2 text-uppercase">{{ Club_Heading }}</h2>
+          <div class="dez-separator-outer">
+            <div class="dez-separator bg-primary style-liner"></div>
+          </div>
+        </div>
+        <div class="section-content">
+          <div
+            class="owl-carousel owl-theme img-carousel-content mfp-gallery gallery owl-btn-center-lr"
+          >
+            {% for clubs in clubs_partner_home %}
+            <div class="item">
+              <div class="ow-carousel-entry">
+                <div class="ow-entry-media dez-img-effect zoom-slow">
+                  <a href="#"><img src="{{ clubs.pic }}" alt="" /></a>
+                </div>
+                <div class="ow-entry-content">
+                  <div class="ow-entry-title">
+                    <a href="#">{{ clubs.name }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div> -->
+      <!-- Clubs END -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- <div class="dez-tabs border-tp product-description bg-tabs" style="padding-top:20px ;">
+                        <ul class="nav nav-tabs">
+                           
+                            {% for tab in TrialsAndInitiativeNav %}
+                            <li class="nav-item"><a class="nav-link {{ tab.activestatus_id}}" data-toggle="tab"
+                                    href="#{{ tab.href }}"><i class="fa fa-globe"></i><span
+                                        class="title-head">{{tab.name}}</span></a>
+                            </li>
+
+                            {% endfor %}
+                        </ul>
+
+                        <div class="tab-content">
+                            {% for tab in TrialsAndInitiativeNav %}
+                            <div id="{{ tab.href }}" class="tab-pane {{ tab.activestatus_id}}">
+                                <p class="m-b10">{{ tab.description|safe }}</p>
+                                <p>{{tab.listtext|safe}}</p>
+                                <p>{{ tab.bottomtext|safe }}</p>
+                                {% if tab.attr2 %}
+                                <div class="m-tb30">
+                                    <a href="{{tab.attr3}}" class="site-button">{{ tab.attr2 }}</a>
+                                </div>
+                                {%endif%}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <!-- Product details -->
+    </div>
+    <!-- contact area  END -->
+</div>
+<!-- Content END-->
+<!-- Footer -->
+		<!-- Footer -->
+		<footer class="site-footer footer-overlay bg-img-fix"
+			style="background-position: center bottom; background-size: cover; display: block;">
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-sm-6 footer-col-4">
+							<form role="search" method="post" action="script/mailchamp.php"
+								class="dzSubscribe bg-primary p-a20 text-white m-t15">
+								<h2 class="m-tb0 font-40"> Support Us  </h2>
+								<!--<p> Join Asia biggest football community </p>
+								
+								<div class="m-tb15">
+									<ul class="dez-social-icon border dez-social-icon-lg">
+										<li><a href="https://www.facebook.com/officialikf"
+												class="fa fa-facebook fb-btn"></a></li>
+										<li><a href="https://twitter.com/khelo_football	"
+												class="fa fa-twitter tw-btn"></a></li>
+										<li><a href="https://www.instagram.com/indiakhelofootball/"
+												class="fa fa-instagram link-btn"></a></li>
+										<li><a href="https://www.youtube.com/channel/UCX6z5QDccvyipZirUChE7uA/videos"
+												class="fa fa-youtube pin-btn"></a></li>
+									</ul>
+								</div>--->
+								
+								<div class="m-tb30"><a href="https://donation.indiakhelofootball.com/"
+										class="site-button bold black border-40"> Donate </a>
+								</div> 
+							</form>
+						</div>
+						</br>
+
+						<div id="mk-icon-box-5" class="mk-box-icon-2  jupiter-donut- box-align-center "
+							style="padding-left: 30px;">
+							<div class="mk-box-icon-2-icon size-48"> <svg class="mk-svg-icon"
+									data-name="mk-moon-location-3" data-cacheid="icon-631ee4c97dcd3"
+									style=" height:48px; width: 48px ;" viewBox="0 0 512 512">
+									<path
+										d="M256 480c-88.366 0-160-71.634-160-160 0-160 160-352 160-352s160 192 160 352c0 88.366-71.635 160-160 160zm0-258c-54.124 0-98 43.876-98 98s43.876 98 98 98 98-43.876 98-98-43.876-98-98-98zm-62 98a62 62 1260 1 0 124 0 62 62 1260 1 0-124 0z"
+										transform="scale(1 -1) translate(0 -480)"></path>
+								</svg> </div>
+							<h3 class="mk-box-icon-2-title">Address</h3>
+							<p class="mk-box-icon-2-content"><span style="color: #ffffff;"><b>Mumbai</b>
+						</div>
+						<div id="mk-icon-box-7" class="mk-box-icon-2  jupiter-donut- box-align-center "
+							style="padding-left: 100px ;">
+							<div class="mk-box-icon-2-icon size-48"> <svg class="mk-svg-icon"
+									data-name="mk-moon-phone-4" data-cacheid="icon-631ee0e2ec3df"
+									style=" height:48px; width: 48px; " viewBox="0 0 512 512">
+									<path
+										d="M321.788 371.146c-11.188 6.236-20.175 2.064-32.764-4.572-11.46-8.748-45.402-35.438-81.226-71.188-26.156-33.084-46.162-64.288-55.375-79.293-.625-1.66-.944-2.632-.944-2.632-5.397-13.476-8.771-22.92-1.324-33.521 6.854-9.727 9.5-12.383 18.24-20.108l-87.79-130.124c-10.604 7.728-27.018 25.106-40.509 44.378-12.538 18.317-23.154 38.587-26.049 53.055 15.295 55.117 52.258 157.896 120.583 231.325l-.021.308c65.73 81.028 170.165 131.43 225.571 153.226 14.679-1.385 35.938-9.844 55.456-20.404 20.598-11.415 39.567-25.945 48.329-35.685l-120.288-100.829c-8.597 7.91-11.498 10.254-21.889 16.064zm-116.178-242.488c7.241-5.302 5.313-14.944 1.926-20.245l-66.579-101.913c-4.344-5.291-13.396-8.064-21.252-5.579l-27.433 18.381 88.034 129.879 25.304-20.523zm287.339 269.188l-94.473-76.788c-4.93-3.918-14.313-6.838-20.325-.188l-23.046 23.05 120.047 101.015 21.136-25.357c3.285-7.564 1.467-16.857-3.339-21.732z">
+									</path>
+								</svg> </div>
+							<h3 class="mk-box-icon-2-title">Phone</h3>
+							<p class="mk-box-icon-2-content"><span style="color: #ffffff;">
+									<p><span style="color: #ffffff;"><b>+91 7008848379</b>
+						</div>
+						<div id="mk-icon-box-9" class="mk-box-icon-2  jupiter-donut- box-align-center "
+							style="padding-left: 100px;">
+							<div class="mk-box-icon-2-icon size-48"> <svg class="mk-svg-icon"
+									data-name="mk-moon-bubble-dots" data-cacheid="icon-631ee0e2ec6ae"
+									style=" height:48px; width: 48px;" xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 512 512">
+									<path
+										d="M418 32h-324c-51.7 0-94 42.3-94 94v354l96-96h322c51.7 0 94-42.3 94-94v-164c0-51.7-42.3-94-94-94zm-258 224c-17.673 0-32-14.327-32-32s14.327-32 32-32 32 14.327 32 32-14.327 32-32 32zm96 0c-17.673 0-32-14.327-32-32s14.327-32 32-32 32 14.327 32 32-14.327 32-32 32zm96 0c-17.673 0-32-14.327-32-32s14.327-32 32-32 32 14.327 32 32-14.327 32-32 32z">
+									</path>
+								</svg> </div>
+							<h3 class="mk-box-icon-2-title">Email</h3>
+							<p class="mk-box-icon-2-content"><span
+									style="color: #ffffff;"><b>amit@indiakhelofootball.com
+									</b></span><br>
+							</p>
+						</div>
+
+					</div>
+
+
+				</div>
+				<!-- footer bottom part -->
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 text-left"> <span>Company name: Khelo Football Ecosystem Development
+									Federation (Section 8 Company)</span> </div>
+							<div class="col-lg-4 text-center"> <span> Registration number:
+									U80901MH2020NPL350467</span><br><span> Darpan ID: MH/2021/0282733</span> </div>
+							<div class="col-lg-4 text-right "> <span> 80G Registration number:
+									AAICK4512EF20214</span><br><span> CSR Number: CSR00022415</span> </div>
+						</div>
+					</div>
+				</div>
+
+		</footer>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Attention :</h5>
+          <button type="button" class="close" data-dismiss="modal" onclick="$('#exampleModalCenter').modal('hide')" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+          <p><b><h4>Please Note</h4></b> </p>
+          <p><b>( Due to Visa issues we have to reschedule workshop date )</b></p>
+          <p><b>Rescheduled Date : 1st and 2nd Week of Feb 2023</b></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="$('#exampleModalCenter').modal('hide')" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script
+    src="{% static 'jquery/jquery-3.5.1.min.js' %}"
+    integrity=""
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="{% static 'js/bootstrap.bundle.min.js' %}"
+    crossorigin="anonymous"
+  ></script>
+<script>
+  window.onload=function(){
+//     $('#exampleModalCenter').modal({ show: false})
+//     $('#exampleModalCenter').modal({
+//    backdrop: 'static',
+//   keyboard: false
+// })
+//     $('#exampleModalCenter').modal('show');
+    var Code="{{code}}"
+  
+    localStorage.setItem("ikfworkshopcode",Code)
+    console.log(localStorage.getItem("ikfworkshopcode"))
+    sessionStorage.clear()
+
+  }
+  </script>
+</html>

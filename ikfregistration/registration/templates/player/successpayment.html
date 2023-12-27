@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card">
+          <div class="card-header">
+            <div class="d-flex justify-content-center" >
+                <div class="spinner-border"  role="status" >
+                  <span class="sr-only">..</span>
+                </div>
+            </div>
+            <h3 class="text-center">Payment submitted successfully!</h3>
+          </div>
+          <div class="card-body">
+            <p>{{payemnt_successfull_wating_for_confirmation}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    window.onload = function () {
+              var workshopcode=""
+              if(localStorage.getItem("ikfworkshopcode")){
+                workshopcode=localStorage.getItem("ikfworkshopcode")
+              }
+        
+              $.ajax({
+                type: "POST",
+                url: "{% url 'update' %}",
+                data: {
+                  razorpay_unique_id:localStorage.getItem("phonepe_order_id"),
+                  ikfuniqueid:localStorage.getItem('ikfuniqueid'),
+                  status: "success",
+                  
+                 
+              
+                  csrfmiddlewaretoken: "{{ csrf_token }}",
+                },
+
+                success: function (result) {
+                  if (result) {
+                    $('.spinner-border').hide();
+                    
+                  console.log(result)
+                    
+                   if(result=="COMPLETED"){
+                    window.location.href = "{% url 'printpdf' %}";
+                   }
+                   else{
+                    window.location.href = "{% url 'paymentfail' %}";
+                   }
+
+                    
+                  }
+                },
+                error: function (error) {
+                  
+                  alert("Integrity Error");
+                  // window.location.href = "{% url 'printpdf' %}";
+                },
+              }); 
+    }
+  </script>
+{% endblock %}
