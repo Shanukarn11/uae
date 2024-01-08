@@ -104,10 +104,18 @@
                         </div>
                         <table class="table table-bordered">
                             {% for workshop in WorkshopsRegTabel %}
+                            {% if workshop.keydata == 'fourth' %}
+                            <tr>
+                                <td>{{workshop.First_Column}}</td>
+                                <td>AED 133.88 including VAT</td>
+                            </tr>
+                            {% else %}
                             <tr>
                                 <td>{{workshop.First_Column}}</td>
                                 <td>{{workshop.Second_Column}}</td>
                             </tr>
+                            {% endif %}
+
                             {% endfor %}
                         </table>
                         <form method="post" class="cart"> {% csrf_token %}

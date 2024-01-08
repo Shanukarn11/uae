@@ -10,6 +10,7 @@ import re
 urlpatterns = [
     path("", views.homeindex, name='homeindex'),
     path("sissharjah", views.sissharjah, name='sissharjah'),
+    path("partners", views.sissharjah, name='sissharjah'),
     path("category/<lang>", views.category, name='category'),
     path("coachorplayer/<lang>/<category>",
          views.coachorplayer, name='coachorplayer'),
