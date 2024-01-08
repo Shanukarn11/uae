@@ -322,7 +322,63 @@ def homeindex(request):
     context['code']=request.GET.get('code')
     return render(request, 'index.html', context)
 
+def sissharjah(request):
+    lang = "en"
+    # langqueryset = MasterLabels.objects.filter().values('keydata', lang)
+    
+    # dict = {
 
+    # }
+    # socialMediaLink = SocialMediaLink.objects.filter(
+    #     include=1, type_of_link="social").values('icon', 'url', 'name',)
+    # website = SocialMediaLink.objects.filter(
+    #     include=1, type_of_link="website").values('icon', 'url', 'name',)
+    # phone = SocialMediaLink.objects.filter(
+    #     include=1, type_of_link="phone").values('icon', 'url', 'name',)
+
+    # # for notice board
+    # # noticeBoard = NoticeBoard.objects.filter(include=1).values(
+    # #     'title', 'description', 'isHeading', 'include',)
+    # for item in langqueryset:
+    #     dict[item['keydata']] = item[lang]
+
+    # dict['social_links'] = socialMediaLink
+    # dict['website_links'] = website
+    # dict['phone_links'] = phone
+    # dict['notice_board'] = ""
+    # #printnoticeBoard)
+    context = pagelabel(lang)
+    workshopsRegimages = WorkShopsReg_Images.objects.filter(lang=lang).values()
+
+    dictvar = dict()
+    for img in workshopsRegimages:
+        dictvar[img['keydata']] = img['pic']
+    
+
+    context['banners'] = HomeBanner.objects.filter(lang=lang).values()
+    context['WorkshopsRegTabel'] = TabelWorkshopsReg.objects.filter(
+        lang=lang).values()
+    context['buttonsReg'] = WorkShopsRegButton.objects.filter(
+        lang=lang).values()
+    context['featurestripsReg'] = WorkShopsRegFeatureStrip.objects.filter(
+        lang=lang).values()
+    context['learnfromexpertsReg'] = WorkShopsRegExperts.objects.filter(
+        lang=lang).values()
+    context['previous_workshop'] = Previous_Workshop_Images.objects.filter(
+        lang=lang).values()
+    context['winners'] = Winners_Workshop_Images.objects.filter(
+        lang=lang).values()
+    context['clubs_partner_home'] = Clubs.objects.filter(
+        lang=lang).values()
+    context['testimonials'] = Testimonials.objects.filter(
+        lang=lang).values()
+    context['workshopsRegimages'] = dictvar
+    context['TrialsAndInitiativeNav'] = TrialsAndInitiativeNav.objects.filter(pagetype="workshopsreg",
+                                                                              lang=lang).values()
+
+    
+    context['code']=request.GET.get('code')
+    return render(request, 'sissharjah.html', context)
 def category(request, lang):
 
     langqueryset = MasterLabels.objects.filter().values('keydata', lang)
